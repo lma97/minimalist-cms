@@ -1,8 +1,12 @@
 'use strict';
 
-
 /**
  * Created by lmaddock on 23/07/2016.
+ * @ngdoc function
+ * @name minimalistCmsApp.directive:formSnippet
+ * @description
+ * # formSnippet
+ * Displays the login panel in the header
  */
 
 angular.module('minimalistCmsApp')

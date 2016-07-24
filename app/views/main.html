@@ -22,12 +22,12 @@
 							<label class="item-label" data-ng-bind="item.label"></label>
 							<span class="item-value" data-ng-bind="item.val"></span>
 
-							<form name="addItemForm" data-ng-submit="saveItem(item, $index)" data-ng-show="editMode && cms.selected.id === $index" class="inline-edit-form" novalidate>
+							<form name="addItemForm" data-ng-submit="addItemForm.$valid && saveItem(item, $index)" data-ng-show="editMode && cms.selected.id === $index" class="inline-edit-form" novalidate>
 								<div class="form-group">
 									<label data-ng-bind="item.label" data-ng-model="item.label"></label>
-									<textarea class="form-control" data-ng-model="item.val" placeholder="Enter a value"></textarea>
+									<textarea class="form-control" data-ng-pattern="formValidation.excludeSpecialChars" data-ng-required="true" data-ng-model="item.val" placeholder="Enter a value"></textarea>
 									<div class="btn-wrapper">
-										<button type="submit" data-ng-click="saveItem(item, $index)" class="btn btn-primary">Save</button>
+										<button type="submit" data-ng-disabled="addItemForm.$invalid" data-ng-click="saveItem(item, $index)" class="btn btn-primary">Save</button>
 										<button type="button" data-ng-click="closeAndReset()" class="btn btn-default">Cancel</button>
 									</div>
 								</div>
@@ -45,16 +45,6 @@
 	</div>
 </div>
 <div class="add" data-ng-show="adminMode">
-<h4>Add</h4>
-<form name="addItemForm" class="form-inline addItemForm" novalidate>
-	<div class="form-group">
-		<label class="sr-only" for="itemLabel">Label</label>
-		<input type="text" class="form-control" id="itemLabel" data-ng-model="itemLabel" placeholder="Enter a label"/>
-		<label class="sr-only" for="itemValue">Value</label>
-		<input type="text" class="form-control" id="itemValue" data-ng-model="itemValue" placeholder="Enter a value"/>
-	</div>
-	<button type="submit" data-ng-click="saveItem()" class="btn btn-primary">Save</button>
-	<button type="button" data-ng-click="closeAndReset()" class="btn btn-default">Cancel</button>
-	<!-- form-snippet formlabel="itemLabel" formval="itemValue" savefn="saveItem()" resetfn="closeAndReset()" idx=""></form-snippet-->
-</form>
+	<h4>Add Content</h4>
+	<form-snippet></form-snippet>
 </div>

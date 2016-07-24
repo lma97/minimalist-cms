@@ -1,34 +1,17 @@
-
-<div class="form-group">
-	<label class="sr-only" for="itemLabel">Label</label>
-	<input type="text" class="form-control" id="itemLabel" data-ng-model="itemLabel" placeholder="Enter a label"/>
-	<label class="sr-only" for="itemValue">Value</label>
-	<input type="text" class="form-control" id="itemValue" data-ng-model="itemValue" placeholder="Enter a value"/>
-</div>
-<a data-ng-click="saveItem()" class="btn btn-primary">Save</a>
-<a data-ng-click="closeAndReset()" class="btn btn-default">Cancel</a>
-
-
-
-<form name="addItemForm" data-ng-submit="saveItem(item, $index)" data-ng-show="editMode && cms.selected.id === $index" class="inline-edit-form" novalidate>
-	<div class="form-group">
-		<label data-ng-bind="item.label" data-ng-model="item.label"></label>
-		<textarea class="form-control" data-ng-model="item.val" placeholder="Enter a value"></textarea>
-		<div class="btn-wrapper">
-			<button type="submit" data-ng-click="saveItem(item, $index)" class="btn btn-primary">Save</button>
-			<button type="button" data-ng-click="closeAndReset()" class="btn btn-default">Cancel</button>
-		</div>
-	</div>
-</form>
-
-<form name="addItemForm" class="form-inline addItemForm" novalidate>
+<form name="addItemForm" data-ng-submit="addItemForm.$valid && saveItem(item, $index)" class="form-inline add-item-form" novalidate>
 	<div class="form-group">
 		<label class="sr-only" for="itemLabel">Label</label>
-		<input type="text" class="form-control" id="itemLabel" data-ng-model="itemLabel" placeholder="Enter a label"/>
-		<label class="sr-only" for="itemValue">Value</label>
-		<input type="text" class="form-control" id="itemValue" data-ng-model="itemValue" placeholder="Enter a value"/>
+		<input type="text" class="form-control" data-ng-pattern="formValidation.excludeSpecialChars" name="itemLabel" id="itemLabel" data-ng-model="itemLabel" data-ng-required="true" placeholder="Enter a label"/>
+		<span class="help-text small" data-ng-show="addItemForm.itemLabel.$invalid && addItemForm.itemLabel.$touched || addItemForm.itemLabel.$error.pattern">Label is required (chars only)</span>
 	</div>
-	<button type="submit" data-ng-click="saveItem()" class="btn btn-primary">Save</button>
-	<button type="button" data-ng-click="closeAndReset()" class="btn btn-default">Cancel</button>
-	<!-- form-snippet formlabel="itemLabel" formval="itemValue" savefn="saveItem()" resetfn="closeAndReset()" idx=""></form-snippet-->
+	<div class="form-group">
+		<label class="sr-only" for="itemValue">Value</label>
+		<input type="text" class="form-control" data-ng-pattern="formValidation.excludeSpecialChars" name="itemValue" id="itemValue" data-ng-model="itemValue" data-ng-required="true" placeholder="Enter a value"/>
+		<span class="help-text small" data-ng-show="addItemForm.itemValue.$invalid && addItemForm.itemValue.$touched || addItemForm.itemValue.$error.pattern">Value is required (chars only)</span>
+	</div>
+	<div class="btn-wrapper">
+		<button type="submit" data-ng-disabled="addItemForm.$invalid" class="btn btn-primary">Save</button>
+		<button type="button" data-ng-click="closeAndReset()" class="btn btn-default">Cancel</button>
+	</div>
+	<!-- form-snippet formlabel="itemLabel" formval="itemValue" savefn="saveItem()" resetfn="closeAndReset()"></form-snippet-->
 </form>

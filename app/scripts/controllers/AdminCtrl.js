@@ -2,11 +2,12 @@
 
 /**
  * @ngdoc function
- * @name minimalistCmsApp.controller:MainCtrl
+ * @name minimalistCmsApp.controller:AdminCtrl
  * @description
- * # MainCtrl
- * Controller of the minimalistCmsApp
+ * # AdminCtrl
+ * Admin controller of the minimalistCmsApp
  */
+
 angular.module('minimalistCmsApp')
   .controller('AdminCtrl', ['$scope', '$location', function ($scope, $location) {
       $scope.showAdminBtn = $location.path() !== '/admin';

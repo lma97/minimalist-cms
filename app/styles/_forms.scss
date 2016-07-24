@@ -31,5 +31,25 @@
 	display: inline-block;
 	margin: $margin-xs 0 0 0;
 }
+.add-item-form {
+	.form-group {
+		display: inline-block;
+		height: 50px;
+		vertical-align: middle;
+	}
+	input.ng-invalid.ng-touched {
+		border: 1px solid $red;
+	}
 
-
+	input.ng-valid.ng-touched {
+		border: 1px solid $green;
+	}
+	.help-text {
+		color: $red;
+		display: block;
+	}
+	.btn-wrapper {
+		vertical-align: top;
+		margin: 0;
+	}
+}

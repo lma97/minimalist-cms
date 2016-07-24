@@ -5,13 +5,16 @@ $gray-light: #cccccc !default;
 $gray-bg: #eee !default;
 $white: #fff !default;
 $black: #000 !default;
+$red: #ea1a1a !default;
+$green: #64b220 !default;
 
 //Site bg
 $body-bg-default: #f0f0f0;
 $header-footer-bg: #336699;
 
+$brand: $blue !default;
 $text-default-color: #333 !default;
-$link-default-color: $blue !default;
+$link-default-color: $brand !default;
 $icon-default-color: $gray-dark !default;
 
 // Border

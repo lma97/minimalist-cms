@@ -14,6 +14,11 @@ header {
 		line-height: $line-height-lg;
 		margin: 0;
 		padding: $padding-sm;
+
+		.glyphicon {
+			color: $brand;
+			padding-right: $padding-m;
+		}
 	}
 	.login-panel,
 	.logout-panel {
