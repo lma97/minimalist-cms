@@ -1,0 +1,15 @@
+<div class="login-panel" data-ng-class="{active: showLoginPanel}" data-ng-hide="adminMode">
+	<a data-ng-hide="showLoginPanel" class="btn btn-success btn-login" data-ng-click="toggleLoginPanel()">Admin Login</a>
+	<form name="login-form" class="login-form form-inline" data-ng-show="showLoginPanel" data-ng-submit="loginUser()">
+		<label for="adminUser" class="sr-only">Login</label>
+		<input type="text" id="adminUser" class="form-control" data-ng-model="adminUser" placeholder="Username"/>
+		<input type="password" class="form-control" data-ng-model="adminPassword" placeholder="Password"/>
+		<div class="btn-wrapper">
+			<button type="submit" class="btn btn-primary btn-sm">Login</button>
+			<a data-ng-click="toggleLoginPanel()">Cancel</a>
+		</div>
+	</form>
+</div>
+<div class="logout-panel" data-ng-show="adminMode">
+	<a class="btn btn-primary btn-logout" data-ng-click="logoutUser()">Logout</a>
+</div>

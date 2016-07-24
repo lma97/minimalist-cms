@@ -1,0 +1,35 @@
+/* Forms.scss - Main Styles for Page
+ * Author: Lisa Maddock
+ *
+ * Designed for Mobile First
+ *
+ */
+
+.login-form {
+	a, label,
+	input[type=text],
+	input[type=password]{
+		font-size: $font-size-sm;
+	}
+	input[type=text], [type=password] {
+		height: auto;
+		padding: $padding-xs $padding-sm;
+		margin-bottom: 3px;
+	}
+
+	.form-control {
+		display: inline-block;
+		width: auto;
+		vertical-align: middle;
+	}
+
+}
+.inline-edit-form {
+	padding: 10px 0;
+}
+.btn-wrapper {
+	display: inline-block;
+	margin: $margin-xs 0 0 0;
+}
+
+

@@ -1,0 +1,54 @@
+// Colors
+$blue: #0077b3 !default;
+$gray-dark: #777777 !default;
+$gray-light: #cccccc !default;
+$gray-bg: #eee !default;
+$white: #fff !default;
+$black: #000 !default;
+
+//Site bg
+$body-bg-default: #f0f0f0;
+$header-footer-bg: #336699;
+
+$text-default-color: #333 !default;
+$link-default-color: $blue !default;
+$icon-default-color: $gray-dark !default;
+
+// Border
+$border-color: #e3e3e3 !default;;
+$border-style: solid !default;
+$border-width: 1px !default;
+
+// Typography size
+$font-size-base: 14px !default;
+$font-size-xs: 10px !default;
+$font-size-sm: 12px !default;
+$font-size-m: 16px !default;
+$font-size-lg: 18px !default;
+$font-size-lgr: 24px !default;
+$font-size-xl: 30px !default;
+$font-size-xxl: 36px !default;
+
+// Line Height
+$line-height-sm: 1.2 !default;
+$line-height-base: 1.3 !default;
+$line-height-lg: 1.4 !default;
+
+//Margin and Padding
+$margin-xs: 5px;
+$margin-sm: 10px;
+$margin-m: 15px;
+$margin-lg: 20px;
+$margin-xl: 30px;
+$margin-xxl: 40px;
+
+$padding-xs: 5px;
+$padding-sm: 10px;
+$padding-m: 15px;
+$padding-lg: 20px;
+$padding-xl: 30px;
+$padding-xxl: 40px;
+
+//widths
+$max-page-width: 960px;
+$mobile-large: 680px;

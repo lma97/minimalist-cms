@@ -1,0 +1,60 @@
+<div class="row">
+	<headline is-admin="adminMode" admin-user="adminUser"></headline>
+</div>
+<div class="row main-content">
+	<div class="col-xs-12">
+		<div class="alert alert-warning no-content" data-ng-show="cms.length <= 0" role="alert">
+			Oops, there is no content saved :-(  Please update me!
+		</div>
+		<div class="panel panel-default repo-list" data-ng-hide="cms.length <= 0">
+			<div class="panel-heading">
+				<span>CMS Items</span> <span class="label label-info">{{ cms.length }}</span>
+				<input type="text" class="cms-filter" data-ng-model="searchField" placeholder="Filter entries">
+				<a class="remove-all" data-ng-show="adminMode" data-ng-click="removeAll()">Remove All Items</a>
+			</div>
+
+			<ul class="list-group">
+				<!-- iterate over cms items -->
+				<li data-ng-repeat="item in cms | filter:searchField track by $index" class="list-group-item cms-item">
+
+					<div class="row">
+						<div class="col-xs-10 col-md-11">
+							<label class="item-label" data-ng-bind="item.label"></label>
+							<span class="item-value" data-ng-bind="item.val"></span>
+
+							<form name="addItemForm" data-ng-submit="saveItem(item, $index)" data-ng-show="editMode && cms.selected.id === $index" class="inline-edit-form" novalidate>
+								<div class="form-group">
+									<label data-ng-bind="item.label" data-ng-model="item.label"></label>
+									<textarea class="form-control" data-ng-model="item.val" placeholder="Enter a value"></textarea>
+									<div class="btn-wrapper">
+										<button type="submit" data-ng-click="saveItem(item, $index)" class="btn btn-primary">Save</button>
+										<button type="button" data-ng-click="closeAndReset()" class="btn btn-default">Cancel</button>
+									</div>
+								</div>
+							</form>
+
+						</div>
+						<div class="col-xs-2 col-md-1 icons">
+							<a data-ng-click="showEditForm(item,$index)" class="edit-link glyphicon glyphicon-pencil" alt="Edit Item" title="Edit Item"></a>
+							<a data-ng-show="adminMode" data-ng-click="removeItem($index)" class="remove-link glyphicon glyphicon-trash" alt="Remove Item" title="Remove Item"></a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="add" data-ng-show="adminMode">
+<h4>Add</h4>
+<form name="addItemForm" class="form-inline addItemForm" novalidate>
+	<div class="form-group">
+		<label class="sr-only" for="itemLabel">Label</label>
+		<input type="text" class="form-control" id="itemLabel" data-ng-model="itemLabel" placeholder="Enter a label"/>
+		<label class="sr-only" for="itemValue">Value</label>
+		<input type="text" class="form-control" id="itemValue" data-ng-model="itemValue" placeholder="Enter a value"/>
+	</div>
+	<button type="submit" data-ng-click="saveItem()" class="btn btn-primary">Save</button>
+	<button type="button" data-ng-click="closeAndReset()" class="btn btn-default">Cancel</button>
+	<!-- form-snippet formlabel="itemLabel" formval="itemValue" savefn="saveItem()" resetfn="closeAndReset()" idx=""></form-snippet-->
+</form>
+</div>

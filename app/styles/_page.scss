@@ -1,0 +1,116 @@
+/* Page.scss - Main Styles for Page
+ * Author: Lisa Maddock
+ *
+ * Designed for Mobile First
+ *
+ */
+
+body {
+	color: $text-default-color;
+	background: $body-bg-default;
+}
+
+a {
+	color: $link-default-color;
+	text-decoration: none;
+}
+
+.browser-update {
+	margin: 0.2em 0;
+	background: $gray-light;
+	padding: 0.2em 0;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], .ng-cloak {
+	display: none;
+}
+.container {
+	width: 100%;
+	max-width: $max-page-width;
+	margin: 0 auto $margin-sm auto;
+}
+
+h2 {
+	font-size: $font-size-lgr;
+}
+
+.headline {
+	color: $blue;
+	font-size: $font-size-lgr;
+	font-family: 'Lato', sans-serif;
+	font-weight: bold;
+	margin: 0 0 $margin-sm 0;
+}
+.sub-headline {
+	font-size: $font-size-lg;
+	font-family: 'Lato', sans-serif;
+	margin: 0 0 $margin-xl 0;
+}
+
+.loading-indicator {
+	display: block;
+	margin: 0 auto;
+}
+
+.no-content, .error-msg {
+	margin-top: $margin-m;
+}
+
+.panel-heading {
+	.cms-filter,
+	.cms-item {
+		font-size: $font-size-sm;
+	}
+	.cms-filter {
+		padding: 3px $padding-xs;
+		margin: $margin-xs 0;
+	}
+	.remove-all {
+
+	}
+}
+.cms-item {
+	.item-label {
+
+	}
+	.item-value  {
+		border: 0;
+	}
+	.edit-link {
+		padding-right: $padding-sm;
+	}
+	.icons {
+		white-space: nowrap;
+	}
+}
+
+/* end */
+
+@media screen and (max-width: $screen-sm) {
+	.headline {
+		font-size: $font-size-lg;
+	}
+	.sub-headline {
+		font-size: $font-size-m;
+	}
+
+	.main-content {
+		.cms-filter {
+
+		}
+	}
+}
+
+@media screen and (max-width: $screen-xs) {
+
+}
+
+/* Tablets and up */
+@media screen and (min-width: $screen-sm) {
+
+	.main-content {
+		.cms-item {
+			font-size: $font-size-base;
+		}
+	}
+}

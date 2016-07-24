@@ -1,0 +1,58 @@
+/* Nav.scss - Main Styles for Page
+ * Author: Lisa Maddock
+ *
+ * Designed for Mobile First
+ *
+ */
+
+header {
+	position: relative;
+	padding: $padding-xxl $padding-xxl $padding-lg $padding-xxl;
+
+	h1 {
+		font-size: $font-size-lgr;
+		line-height: $line-height-lg;
+		margin: 0;
+		padding: $padding-sm;
+	}
+	.login-panel,
+	.logout-panel {
+		position: static;
+		text-align: center;
+	}
+	.btn-login,
+	.btn-logout {
+		width: 50%;
+	}
+
+	.btn-login, .btn-logout {
+		border-radius: 20px;
+	}
+}
+footer {
+	bottom: 0;
+	width: 100%;
+	background: $body-bg-default;
+	padding: $padding-sm $padding-xxl;
+}
+
+
+@media screen and (min-width: $mobile-large) {
+	header {
+		padding-bottom: $padding-xxl;
+
+		.login-panel,
+		.logout-panel {
+			position: absolute;
+			top: 55px;
+			right: 40px;
+			z-index: 1;
+
+		}
+		.btn-login,
+		.btn-logout {
+			width: auto;
+		}
+	}
+}
+
